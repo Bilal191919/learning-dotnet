@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="../Stage_8.UnitTests/Stage_8.UnitTests.csproj" Id="275d118f-94e4-4a4a-8a45-9ba23d46a22a" />
+  <Project Path="Stage-4.csproj" />
+  <Project Path="Stage_7.Application/Stage_7.Application.csproj" />
+  <Project Path="Stage_7.Domain/Stage_7.Domain.csproj" />
+  <Project Path="Stage_7.Infrastructure/Stage_7.Infrastructure.csproj" />
+</Solution>
