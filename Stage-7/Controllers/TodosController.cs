@@ -5,7 +5,7 @@ using Stage_7.Infrastructure;
 using Microsoft.AspNetCore.Authorization;
 using MediatR;
 using Stage_7.Application.Features.Todos.Queries;
-using Stage_7.Application.Features.Todos.Commands; // ✅ Commands ka reference zaroori hai
+using Stage_7.Application.Features.Todos.Commands; 
 
 namespace Stage_4.Controllers
 {
@@ -14,8 +14,8 @@ namespace Stage_4.Controllers
 	[ApiController]
 	public class TodosController : ControllerBase
 	{
-		private readonly AppDbContext _context; // Sirf user dhundne ke liye
-		private readonly IMediator _mediator;   // ✅ Waiter (CQRS ke liye)
+		private readonly AppDbContext _context; 
+		private readonly IMediator _mediator;   
 
 		public TodosController(AppDbContext context, IMediator mediator)
 		{
@@ -23,9 +23,7 @@ namespace Stage_4.Controllers
 			_mediator = mediator;
 		}
 
-		// ============================================================
-		// 1. GET ALL (Uses CQRS Query) ✅
-		// ============================================================
+	
 		[HttpGet]
 		public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodos()
 		{
@@ -38,9 +36,7 @@ namespace Stage_4.Controllers
 			return Ok(result);
 		}
 
-		// ============================================================
-		// 2. GET BY ID (Uses Direct DB - Optional)
-		// ============================================================
+		
 		[HttpGet("{id}")]
 		public async Task<ActionResult<TodoItem>> GetTodoItem(int id)
 		{
@@ -55,9 +51,7 @@ namespace Stage_4.Controllers
 			return todoItem;
 		}
 
-		// ============================================================
-		// 3. CREATE (Uses CQRS Command) ✅
-		// ============================================================
+		/=
 		[HttpPost]
 		public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem todoItem)
 		{
@@ -76,9 +70,6 @@ namespace Stage_4.Controllers
 			return CreatedAtAction("GetTodoItem", new { id = result.Id }, result);
 		}
 
-		// ============================================================
-		// 4. UPDATE (Uses CQRS Command) ✅
-		// ============================================================
 		[HttpPut("{id}")]
 		public async Task<IActionResult> PutTodoItem(int id, TodoItem todoItem)
 		{
@@ -102,9 +93,7 @@ namespace Stage_4.Controllers
 			return NoContent();
 		}
 
-		// ============================================================
-		// 5. DELETE (Uses CQRS Command) ✅ NEW!
-		// ============================================================
+		
 		[Authorize(Policy = "CanManageTodos")]
 		[HttpDelete("{id}")]
 		public async Task<IActionResult> DeleteTodo(int id)
@@ -112,14 +101,13 @@ namespace Stage_4.Controllers
 			var user = await GetCurrentUser();
 			if (user == null) return Unauthorized();
 
-			// Naya Command banaya
+			
 			var command = new DeleteTodoCommand
 			{
 				Id = id,
 				UserId = user.Id
 			};
 
-			// Mediator ko bheja: "Jao delete kar ke aao"
 			var success = await _mediator.Send(command);
 
 			if (!success) return NotFound();
@@ -127,7 +115,7 @@ namespace Stage_4.Controllers
 			return NoContent();
 		}
 
-		// Helper Method (User nikalne ke liye)
+		
 		private async Task<User?> GetCurrentUser()
 		{
 			var username = User.Identity?.Name;
