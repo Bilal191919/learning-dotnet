@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  stage-4-api:
+    image: stage4api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
