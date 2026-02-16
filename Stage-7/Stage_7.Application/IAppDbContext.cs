@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Stage_7.Domain;
 
 namespace Stage_7.Application
 {
-	
 	public interface IAppDbContext
 	{
-		DbSet<TodoItem> TodoItems { get; }
+		DbSet<TodoItem> Todos { get; }
 		DbSet<User> Users { get; }
 		Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 	}

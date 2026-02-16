@@ -1,0 +1,10 @@
+D:\Personal\Software House\Stage-7\Stage_7.Domain\bin\Debug\net8.0\Stage_7.Domain.deps.json
+D:\Personal\Software House\Stage-7\Stage_7.Domain\bin\Debug\net8.0\Stage_7.Domain.dll
+D:\Personal\Software House\Stage-7\Stage_7.Domain\bin\Debug\net8.0\Stage_7.Domain.pdb
+D:\Personal\Software House\Stage-7\Stage_7.Domain\obj\Debug\net8.0\Stage_7.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Personal\Software House\Stage-7\Stage_7.Domain\obj\Debug\net8.0\Stage_7.Domain.csproj.CoreCompileInputs.cache
+D:\Personal\Software House\Stage-7\Stage_7.Domain\obj\Debug\net8.0\Stage_7.Domain.sourcelink.json
+D:\Personal\Software House\Stage-7\Stage_7.Domain\obj\Debug\net8.0\Stage_7.Domain.dll
+D:\Personal\Software House\Stage-7\Stage_7.Domain\obj\Debug\net8.0\refint\Stage_7.Domain.dll
+D:\Personal\Software House\Stage-7\Stage_7.Domain\obj\Debug\net8.0\Stage_7.Domain.pdb
+D:\Personal\Software House\Stage-7\Stage_7.Domain\obj\Debug\net8.0\ref\Stage_7.Domain.dll

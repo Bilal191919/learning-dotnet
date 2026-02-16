@@ -14,22 +14,20 @@ namespace Stage_7.Application.Features.Todos.Commands
 
 		public async Task<bool> Handle(DeleteTodoCommand request, CancellationToken cancellationToken)
 		{
-			// 1. Item dhoonda
-			var todoItem = await _context.TodoItems.FindAsync(request.Id);
+			
+			var todoItem = await _context.Todos.FindAsync(request.Id);
 
-			// 2. Check kiya: Kya item hai? Kya ye isi user ka hai?
+		
 			if (todoItem == null || todoItem.UserId != request.UserId)
 			{
-				return false; // Fail
+				return false; 
 			}
 
-			// 3. Delete kiya
-			_context.TodoItems.Remove(todoItem);
+			_context.Todos.Remove(todoItem);
 
-			// 4. Save kiya
 			await _context.SaveChangesAsync(cancellationToken);
 
-			return true; // Success
+			return true; 
 		}
 	}
 }

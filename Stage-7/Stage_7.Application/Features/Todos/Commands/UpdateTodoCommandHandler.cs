@@ -15,7 +15,7 @@ namespace Stage_7.Application.Features.Todos.Commands
 		public async Task<bool> Handle(UpdateTodoCommand request, CancellationToken cancellationToken)
 		{
 			// 1. Purana record dhoonda
-			var todoItem = await _context.TodoItems.FindAsync(request.Id);
+			var todoItem = await _context.Todos.FindAsync(request.Id);
 
 			// 2. Check kiya ke record hai bhi ya nahi, aur kya ye usi user ka hai?
 			if (todoItem == null || todoItem.UserId != request.UserId)

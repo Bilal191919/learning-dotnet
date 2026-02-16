@@ -23,7 +23,7 @@ namespace Stage_7.Application.Features.Todos.Commands
 			};
 
 			
-			_context.TodoItems.Add(newTodo);
+			_context.Todos.Add(newTodo);
 
 			
 			await _context.SaveChangesAsync(cancellationToken);

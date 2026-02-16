@@ -17,7 +17,7 @@ namespace Stage_7.Application.Features.Todos.Queries
 		public async Task<List<TodoItem>> Handle(GetTodosQuery request, CancellationToken cancellationToken)
 		{
 	
-			return await _context.TodoItems
+			return await _context.Todos
 				.Where(t => t.UserId == request.UserId)
 				.ToListAsync(cancellationToken);
 		}

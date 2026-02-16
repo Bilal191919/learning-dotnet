@@ -43,7 +43,7 @@ namespace Stage_4.Controllers
 			var user = await GetCurrentUser();
 			if (user == null) return Unauthorized();
 
-			var todoItem = await _context.TodoItems.FindAsync(id);
+			var todoItem = await _context.Todos.FindAsync(id);
 
 			if (todoItem == null) return NotFound();
 			if (todoItem.UserId != user.Id) return NotFound();
@@ -51,7 +51,7 @@ namespace Stage_4.Controllers
 			return todoItem;
 		}
 
-		/=
+		//
 		[HttpPost]
 		public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem todoItem)
 		{
