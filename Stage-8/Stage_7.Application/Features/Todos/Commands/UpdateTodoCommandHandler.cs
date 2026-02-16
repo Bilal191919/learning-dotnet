@@ -1,9 +1,9 @@
 ﻿using MediatR;
-using Stage_7.Domain;
+using Stage_7.Application.Features.Todos.Commands;
 
-namespace Stage_7.Application.Features.Todos.Commands
+namespace Stage_7.Application.Features.Todos.Handlers
 {
-	public class UpdateTodoCommandHandler : IRequestHandler<UpdateTodoCommand, bool>
+	public class UpdateTodoCommandHandler : IRequestHandler<UpdateTodoCommand>
 	{
 		private readonly IAppDbContext _context;
 
@@ -12,25 +12,19 @@ namespace Stage_7.Application.Features.Todos.Commands
 			_context = context;
 		}
 
-		public async Task<bool> Handle(UpdateTodoCommand request, CancellationToken cancellationToken)
+		public async Task Handle(UpdateTodoCommand request, CancellationToken cancellationToken)
 		{
-			// 1. Purana record dhoonda
-			var todoItem = await _context.TodoItems.FindAsync(request.Id);
+			var todo = await _context.Todos.FindAsync(new object[] { request.Id }, cancellationToken);
 
-			// 2. Check kiya ke record hai bhi ya nahi, aur kya ye usi user ka hai?
-			if (todoItem == null || todoItem.UserId != request.UserId)
+			if (todo == null)
 			{
-				return false; // Fail
+				return;
 			}
 
-			// 3. Update kiya
-			todoItem.Title = request.Title;
-			todoItem.IsCompleted = request.IsCompleted;
+			todo.Title = request.Title;
+			todo.IsCompleted = request.IsCompleted;
 
-			// 4. Save kiya
 			await _context.SaveChangesAsync(cancellationToken);
-
-			return true; // Success
 		}
 	}
 }

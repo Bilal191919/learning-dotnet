@@ -1,9 +1,10 @@
 ﻿using MediatR;
 using Stage_7.Domain;
+using Stage_7.Application.Features.Todos.Commands;
 
-namespace Stage_7.Application.Features.Todos.Commands
+namespace Stage_7.Application.Features.Todos.Handlers
 {
-	public class CreateTodoCommandHandler : IRequestHandler<CreateTodoCommand, TodoItem>
+	public class CreateTodoCommandHandler : IRequestHandler<CreateTodoCommand, int>
 	{
 		private readonly IAppDbContext _context;
 
@@ -12,24 +13,19 @@ namespace Stage_7.Application.Features.Todos.Commands
 			_context = context;
 		}
 
-		public async Task<TodoItem> Handle(CreateTodoCommand request, CancellationToken cancellationToken)
+		public async Task<int> Handle(CreateTodoCommand request, CancellationToken cancellationToken)
 		{
-			// 1. Naya object banaya
-			var newTodo = new TodoItem
+			var todo = new TodoItem
 			{
 				Title = request.Title,
-				IsCompleted = request.IsCompleted,
+				IsCompleted = false,
 				UserId = request.UserId
 			};
 
-			
-			_context.TodoItems.Add(newTodo);
-
-			
+			_context.Todos.Add(todo);
 			await _context.SaveChangesAsync(cancellationToken);
 
-		
-			return newTodo;
+			return todo.Id;
 		}
 	}
 }

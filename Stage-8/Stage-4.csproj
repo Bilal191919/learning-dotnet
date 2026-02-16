@@ -11,15 +11,19 @@
   <Compile Remove="Stage_7.Application\**" />
   <Compile Remove="Stage_7.Domain\**" />
   <Compile Remove="Stage_7.Infrastructure\**" />
+  <Compile Remove="Stage_8.UnitTests\**" />
   <Content Remove="Stage_7.Application\**" />
   <Content Remove="Stage_7.Domain\**" />
   <Content Remove="Stage_7.Infrastructure\**" />
+  <Content Remove="Stage_8.UnitTests\**" />
   <EmbeddedResource Remove="Stage_7.Application\**" />
   <EmbeddedResource Remove="Stage_7.Domain\**" />
   <EmbeddedResource Remove="Stage_7.Infrastructure\**" />
+  <EmbeddedResource Remove="Stage_8.UnitTests\**" />
   <None Remove="Stage_7.Application\**" />
   <None Remove="Stage_7.Domain\**" />
   <None Remove="Stage_7.Infrastructure\**" />
+  <None Remove="Stage_8.UnitTests\**" />
 </ItemGroup>
 
 <ItemGroup>
