@@ -52,109 +52,26 @@
     ]
   },
   {
-    "ContainingType": "Stage_4.Controllers.TodosController",
-    "Method": "GetTodos",
-    "RelativePath": "api/Todos",
+    "ContainingType": "Stage_7.WebAPI.Controllers.TodoController",
+    "Method": "Get",
+    "RelativePath": "api/Todo",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Stage_7.Domain.TodoItem, Stage_7.Domain, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
-    "ContainingType": "Stage_4.Controllers.TodosController",
-    "Method": "PostTodoItem",
-    "RelativePath": "api/Todos",
+    "ContainingType": "Stage_7.WebAPI.Controllers.TodoController",
+    "Method": "Create",
+    "RelativePath": "api/Todo",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "todoItem",
-        "Type": "Stage_7.Domain.TodoItem",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Stage_7.Domain.TodoItem",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Stage_4.Controllers.TodosController",
-    "Method": "GetTodoItem",
-    "RelativePath": "api/Todos/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Stage_7.Domain.TodoItem",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Stage_4.Controllers.TodosController",
-    "Method": "PutTodoItem",
-    "RelativePath": "api/Todos/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "todoItem",
-        "Type": "Stage_7.Domain.TodoItem",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Stage_4.Controllers.TodosController",
-    "Method": "DeleteTodo",
-    "RelativePath": "api/Todos/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "request",
+        "Type": "Stage_7.WebAPI.Controllers.CreateTodoRequest",
         "IsRequired": true
       }
     ],
