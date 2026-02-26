@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="Stage-4.csproj" />
+  <Project Path="Stage_7.Api.csproj" />
   <Project Path="Stage_7.Application/Stage_7.Application.csproj" />
   <Project Path="Stage_7.Domain/Stage_7.Domain.csproj" />
   <Project Path="Stage_7.Infrastructure/Stage_7.Infrastructure.csproj" />

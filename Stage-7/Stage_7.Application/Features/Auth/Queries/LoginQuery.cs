@@ -27,17 +27,10 @@ public class LoginQueryHandler : IRequestHandler<LoginQuery, string>
 		var user = await _context.Users
 			.FirstOrDefaultAsync(u => u.Username == request.Username, cancellationToken);
 
-		if (user == null)
-		{
-			throw new Exception("User not found!");
-		}
+		if (user == null) throw new Exception("User not found!");
 
 		bool isPasswordValid = BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash);
-
-		if (!isPasswordValid)
-		{
-			throw new Exception("Invalid password!");
-		}
+		if (!isPasswordValid) throw new Exception("Invalid password!");
 
 		var authClaims = new List<Claim>
 		{
@@ -46,12 +39,17 @@ public class LoginQueryHandler : IRequestHandler<LoginQuery, string>
 			new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
 		};
 
-		var keyString = _configuration["Jwt:Key"] ?? "Mera_Bohot_Secret_Aur_Lamba_Key_12345!";
+		var keyString = _configuration["Jwt:Key"]!;
+		var issuer = _configuration["Jwt:Issuer"];
+		var audience = _configuration["Jwt:Audience"];
+
+		Console.WriteLine($"LOGIN - Issuer: {issuer}, Audience: {audience}, Key Length: {keyString?.Length}");
+
 		var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(keyString));
 
 		var token = new JwtSecurityToken(
-			issuer: _configuration["Jwt:Issuer"],
-			audience: _configuration["Jwt:Audience"],
+			issuer: issuer,
+			audience: audience,
 			expires: DateTime.Now.AddHours(3),
 			claims: authClaims,
 			signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
