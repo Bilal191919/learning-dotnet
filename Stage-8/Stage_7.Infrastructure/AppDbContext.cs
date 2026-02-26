@@ -11,7 +11,7 @@ namespace Stage_7.Infrastructure
 		{
 		}
 
-		public DbSet<TodoItem> TodoItems { get; set; }
+		public DbSet<TodoItem> Todos { get; set; }
 		public DbSet<User> Users { get; set; }
 
 		
