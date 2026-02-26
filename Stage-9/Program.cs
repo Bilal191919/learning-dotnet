@@ -1,13 +1,14 @@
+using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using Stage_4.Middleware;
+using Stage_4.Middlewares;
 using Stage_7.Application;
 using Stage_7.Domain;
 using Stage_7.Infrastructure;
-using Stage_4.Middleware;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,6 +49,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 		};
 	});
 
+builder.Services.AddMemoryCache();
+
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(IAppDbContext).Assembly));
 
 builder.Services.AddControllers();
@@ -79,6 +82,7 @@ builder.Services.AddSwaggerGen(c =>
 var app = builder.Build();
 
 app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
+app.UseMiddleware<PerformanceMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {
