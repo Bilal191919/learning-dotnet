@@ -11,12 +11,7 @@ namespace Stage_7.Application.Features.Todos.Queries
 		public int PageSize { get; set; }
 		public bool UseOptimized { get; set; }
 
-		public GetTodosQuery(int userId, int pageNumber, int pageSize, bool useOptimized)
-		{
-			UserId = userId;
-			PageNumber = pageNumber;
-			PageSize = pageSize;
-			UseOptimized = useOptimized;
-		}
+		// Khali Constructor: Is se CS7036 error hamesha ke liye khatam ho jayega
+		public GetTodosQuery() { }
 	}
 }

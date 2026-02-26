@@ -30,9 +30,14 @@ D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.EntityFrameworkCo
 D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
 D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
@@ -46,6 +51,8 @@ D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.OpenApi.dll
 D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Npgsql.dll
+D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Serilog.dll
 D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Serilog.AspNetCore.dll
 D:\Personal\Software House\Stage-10\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
@@ -160,10 +167,10 @@ D:\Personal\Software House\Stage-10\obj\Debug\net8.0\staticwebassets.build.json.
 D:\Personal\Software House\Stage-10\obj\Debug\net8.0\staticwebassets.development.json
 D:\Personal\Software House\Stage-10\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 D:\Personal\Software House\Stage-10\obj\Debug\net8.0\swae.build.ex.cache
+D:\Personal\Software House\Stage-10\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\Personal\Software House\Stage-10\obj\Debug\net8.0\Stage-4.csproj.Up2Date
 D:\Personal\Software House\Stage-10\obj\Debug\net8.0\Stage-4.dll
 D:\Personal\Software House\Stage-10\obj\Debug\net8.0\refint\Stage-4.dll
 D:\Personal\Software House\Stage-10\obj\Debug\net8.0\Stage-4.pdb
 D:\Personal\Software House\Stage-10\obj\Debug\net8.0\Stage-4.genruntimeconfig.cache
 D:\Personal\Software House\Stage-10\obj\Debug\net8.0\ref\Stage-4.dll
-D:\Personal\Software House\Stage-10\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
